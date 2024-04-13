@@ -1,0 +1,17 @@
+<configuration debug="false" packagingData="true">
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{35} - %marker %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="fluency" class="ch.qos.logback.more.appenders.FluencyLogbackAppender">
+        <remoteHost>localhost</remoteHost>
+        <port>24224</port>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console" />
+        <appender-ref ref="fluency" />
+    </root>
+</configuration>
